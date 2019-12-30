@@ -1,4 +1,4 @@
-package by.bsuir.ankomar.library.model;
+package by.bsuir.ankomar.library.enums;
 
 public enum UserStatus {
     OWNER,

@@ -1,7 +1,7 @@
 package by.bsuir.ankomar.library.view;
 
 import by.bsuir.ankomar.library.controller.VisitorsProfiles;
-import by.bsuir.ankomar.library.model.UserStatus;
+import by.bsuir.ankomar.library.enums.UserStatus;
 import by.bsuir.ankomar.library.model.Visitor;
 
 import javax.swing.*;
