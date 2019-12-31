@@ -7,9 +7,10 @@ import java.util.Date;
 import java.util.List;
 
 public class VisitorsRegister implements DataStorage {
+    public static final VisitorsRegister INSTANCE = new VisitorsRegister();
     List<VisitorsRegisterEntry> entries;
 
-    public VisitorsRegister() {
+    private VisitorsRegister() {
         entries = new ArrayList<>();
     }
 

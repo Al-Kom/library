@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VisitorsProfiles implements DataStorage {
+    public static final VisitorsProfiles INSTANCE = new VisitorsProfiles();
     private List<Visitor> visitors;
 
-    public VisitorsProfiles() { visitors = new ArrayList<>(); }
+    private VisitorsProfiles() { visitors = new ArrayList<>(); }
 
     public void add(Object visitor) { visitors.add((Visitor) visitor); }
 
@@ -19,5 +20,4 @@ public class VisitorsProfiles implements DataStorage {
     public void changeVisitor(Visitor visitor) {
         //TODO: dialog to change
     }
-
 }

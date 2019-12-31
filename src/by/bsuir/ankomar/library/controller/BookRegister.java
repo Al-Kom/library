@@ -5,10 +5,11 @@ import by.bsuir.ankomar.library.model.BookRegisterEntry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookCatalog implements DataStorage{
+public class BookRegister implements DataStorage{
+    public static final BookRegister INSTANSE = new BookRegister();
     private List<BookRegisterEntry> entries;
 
-    public BookCatalog() {
+    private BookRegister() {
         entries = new ArrayList<>();
     }
 
@@ -20,5 +21,13 @@ public class BookCatalog implements DataStorage{
     @Override
     public void delete(Object entry) {
         entries.remove(entry);
+    }
+
+    public BookRegisterEntry getEntry(String bookName) {
+        for (BookRegisterEntry entry : entries) {
+            if(bookName.equals(entry.book.name))
+                return entry;
+        }
+        return null;
     }
 }
