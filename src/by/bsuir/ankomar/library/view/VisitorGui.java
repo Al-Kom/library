@@ -6,6 +6,7 @@ import by.bsuir.ankomar.library.model.Visitor;
 import javax.swing.*;
 import java.awt.*;
 
+
 /*
     'UI' in class diagram
  */
@@ -33,6 +34,7 @@ public class VisitorGui extends JFrame {
 
         //TODO:listeners
         takeBook.addActionListener(e -> new TakeBookDialog(this, visitor));
+        returnBook.addActionListener(e -> new ReturnBookGui(this, visitor));
 
         setVisible(true);
     }

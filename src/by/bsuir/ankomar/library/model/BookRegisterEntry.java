@@ -24,4 +24,10 @@ public class BookRegisterEntry {
     private void recalculateAverageRating(int additionalRating) {
         averageRating = (averageRating*ratingCounter + additionalRating) / (++ratingCounter);
     }
+
+    public BookStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(BookStatus status) { this.status = status; }
 }

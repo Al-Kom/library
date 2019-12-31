@@ -4,7 +4,8 @@ import by.bsuir.ankomar.library.connector.UsersConnector;
 import by.bsuir.ankomar.library.controller.BookRegister;
 import by.bsuir.ankomar.library.controller.BookStorage;
 import by.bsuir.ankomar.library.controller.VisitorsProfiles;
-import by.bsuir.ankomar.library.model.BookPlace;
+import by.bsuir.ankomar.library.enums.BookStatus;
+import by.bsuir.ankomar.library.model.BookRegisterEntry;
 import by.bsuir.ankomar.library.model.Visitor;
 
 import javax.swing.*;
@@ -38,14 +39,13 @@ public class TakeBookDialog extends JDialog {
         searchButton.addActionListener(e -> {
             String bookName = nameTF.getText();
             //search book entry in book register
-            if (BookRegister.INSTANSE.getEntry(bookName) == null) {
+            BookRegisterEntry entry = BookRegister.INSTANSE.getEntry(bookName);
+            if (entry == null) {
                 JOptionPane.showMessageDialog(this,
                         "Книга " + bookName + " не найдена в каталоге");
                 return;
             }
-            //search book place in book storage
-            BookPlace bookPlace = BookStorage.INSTANCE.getBookPlace(bookName);
-            if (bookPlace == null) {
+            if (entry.getStatus() == BookStatus.BORROWED) {
                 int userInput = JOptionPane.showConfirmDialog(this,
                         "Книга " + bookName + " \"на руках\"\n" +
                                 "Хотите добавить к запланированным?",
@@ -55,12 +55,12 @@ public class TakeBookDialog extends JDialog {
                     //add to planned
                     VisitorsProfiles.INSTANCE.changeVisitor(visitor);
                 }
-            } else {
+            } else if (BookStorage.INSTANCE.getBookPlace(bookName)!=null) { //search book place in book storage
                 JOptionPane.showMessageDialog(this,
                         "Книга " + bookName + " найдена.\n" +
                                 "Запрос на взятие будет отправлен владельцу");
                 //take book
-                ownerGui.showTakeBook(visitor, bookPlace);
+                ownerGui.showTakeBook(visitor, entry);
             }
         });
 
