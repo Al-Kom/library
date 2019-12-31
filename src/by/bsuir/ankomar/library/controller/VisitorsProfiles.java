@@ -1,6 +1,7 @@
 package by.bsuir.ankomar.library.controller;
 
 import by.bsuir.ankomar.library.model.Visitor;
+import by.bsuir.ankomar.library.view.EditVisitorGui;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,11 @@ public class VisitorsProfiles implements DataStorage {
     }
 
     public void changeVisitor(Visitor visitor) {
-        //TODO: dialog to change
+        for (Visitor vi : visitors) {
+            if (vi == visitor) {
+                //create change gui
+                new EditVisitorGui(null, vi);
+            }
+        }
     }
 }

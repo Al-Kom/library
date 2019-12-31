@@ -27,6 +27,8 @@ public class Visitor {
         plannedBooks = new ArrayList<>();
     }
 
+    public UserStatus getStatus() { return status; }
+
     public void addToList(List<Book> bookList, Book book) {
         if (bookList == favouriteBooks) {
             favouriteBooks.add(book);

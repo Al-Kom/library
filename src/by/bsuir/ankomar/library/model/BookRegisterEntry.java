@@ -12,7 +12,7 @@ public class BookRegisterEntry {
         this.book = book;
         this.averageRating = averageRating;
         this.status = status;
-        ratingCounter = 1;
+        ratingCounter = 0;
     }
 
     public void editEntry(FinishedBook finishedBook) {

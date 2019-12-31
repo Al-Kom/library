@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class CreateProfileDialog extends JDialog {
 
-    public CreateProfileDialog(Frame parent, VisitorsProfiles visitorsProfiles) {
+    public CreateProfileDialog(Frame parent) {
         super(parent, "Создать профиль");
 
         //input panel
@@ -37,7 +37,7 @@ public class CreateProfileDialog extends JDialog {
                     ? UserStatus.OWNER
                     : UserStatus.VISITOR;
             Visitor visitor = new Visitor(nameTF.getText(), surnameTF.getText(), status);
-            visitorsProfiles.addVisitor(visitor);
+            VisitorsProfiles.INSTANCE.add(visitor);
             //close dialog
             dispose();
             //enter to user profile
