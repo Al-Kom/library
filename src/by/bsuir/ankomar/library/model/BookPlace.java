@@ -14,6 +14,10 @@ public class BookPlace {
     private Direction direction = null;
     private Jenre jenre = null;
 
+    public BookPlace(Book book, Theme theme) {
+        this.book = book;
+        this.theme = theme;
+    }
 
     public BookPlace(Book book, Theme theme, Direction direction) {
         this.book = book;
@@ -25,5 +29,9 @@ public class BookPlace {
         this.book = book;
         this.theme = theme;
         this.jenre = jenre;
+    }
+
+    public Book getBook() {
+        return book;
     }
 }
