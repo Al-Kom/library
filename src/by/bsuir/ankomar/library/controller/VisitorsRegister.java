@@ -1,5 +1,6 @@
 package by.bsuir.ankomar.library.controller;
 
+import by.bsuir.ankomar.library.model.Book;
 import by.bsuir.ankomar.library.model.VisitorsRegisterEntry;
 
 import java.util.ArrayList;
@@ -27,5 +28,14 @@ public class VisitorsRegister implements DataStorage {
     public void editEntry(VisitorsRegisterEntry entry) {
         Date date = new Date(); //current date
         entry.updateEntry(entry.book, entry.surname, date);
+    }
+
+    public VisitorsRegisterEntry getEntry(Book book) {
+        for (VisitorsRegisterEntry entry : entries) {
+            if (entry.book.equals(book)) {
+                return entry;
+            }
+        }
+        return null;
     }
 }

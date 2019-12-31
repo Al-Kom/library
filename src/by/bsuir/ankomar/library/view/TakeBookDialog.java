@@ -24,6 +24,7 @@ public class TakeBookDialog extends JDialog {
                     JOptionPane.ERROR_MESSAGE);
             return;
         }
+
         //input panel
         JPanel inputPanel = new JPanel();
         JLabel nameLabel = new JLabel("Название книги");

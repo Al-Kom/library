@@ -26,4 +26,8 @@ public class VisitorsProfiles implements DataStorage {
             }
         }
     }
+
+    public int getVisitorAmount() { return visitors.size(); }
+
+    public Visitor getVisitor(int index) { return visitors.get(index); }
 }

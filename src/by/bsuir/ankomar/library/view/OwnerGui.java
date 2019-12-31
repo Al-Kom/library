@@ -34,6 +34,7 @@ public class OwnerGui extends VisitorGui {
 
         //button listeners
         addBook.addActionListener(e -> new AddBookDialog(OwnerGui.this));
+        deleteBook.addActionListener(e -> new DeleteBookDialog(this));
 
         update(getGraphics());
     }

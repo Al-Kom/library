@@ -51,9 +51,15 @@ public class Visitor {
         }
     }
 
-    public void removeFromList(List<FinishedBook> bookList, FinishedBook finishedBook) {
+    public void deleteFromList(List<FinishedBook> bookList, FinishedBook finishedBook) {
         if (bookList == finishedBooks) {
-            finishedBooks.add(finishedBook);
+            finishedBooks.remove(finishedBook);
         }
     }
+
+    public List<Book> getFavouriteBooks() { return favouriteBooks; }
+
+    public List<Book> getPlannedBooks() { return plannedBooks; }
+
+    public List<FinishedBook> getFinishedBooks() { return finishedBooks; }
 }
